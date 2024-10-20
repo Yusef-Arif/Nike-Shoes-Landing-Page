@@ -17,7 +17,7 @@ function ToggleList() {
           alt="menu"
           width={25}
           height={25}
-          className="relative"
+          className="relative cursor-pointer"
         />
       </a>
 
