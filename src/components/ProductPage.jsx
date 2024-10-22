@@ -4,13 +4,19 @@ import Nav from "./Nav";
 import { star } from "../assets/icons";
 import Button from "./Button";
 import ProductsCards from "./ProductsCards";
+import { useEffect } from "react";
+
 const ProductPage = () => {
   const { id } = useParams();
   const product = products[id];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   return (
     <section>
       <Nav product />
-
       {product ? (
         <div className="flex p-5 gap-12 max-sm:flex-col">
           <div>
@@ -38,6 +44,7 @@ const ProductPage = () => {
                 <Button label="Add To Cart" product />
               </div>
             </div>
+            
             <p className="font-montserrat text-slate-gray text-lg leading-8 mt-6 mb-14 max-w-lg ml-8">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum
               nam impedit nisi quidem tenetur. Velit excepturi adipisci sequi,
@@ -49,6 +56,7 @@ const ProductPage = () => {
               <span className="text-coral-red font-montserrat">Popular</span>{" "}
               Products:
             </h1>
+            
             <div className="mt-12 grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1  max-sm:gap-12 sm:gap-6 justify-center items-center">
               {products.map((product, index) => {
                 console.log(index);

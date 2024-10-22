@@ -3,7 +3,7 @@ import ProductPage from "./components/ProductPage";
 import Home from "./Home";
 const App = () => (
   <Routes>
-    <Route path="/" element={<Home />} />
+    <Route path="*" element={<Home />} />
     <Route path="/product/:id" element={<ProductPage />} />
   </Routes>
 );
